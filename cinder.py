@@ -52,10 +52,10 @@ def f(img):
         cx = int(M['m10']/M['m00'])
         cy = int(M['m01']/M['m00'])
 
-        img = cv2.drawContours(img, [contour], -1, (0, 255, 255), thickness=3)
+        cv2.drawContours(img, [contour], -1, (0, 255, 255), thickness=3, lineType=16)
 
-        img = cv2.putText(img, '%d%%' % (熟度*100), (cx+1, cy+1), cv2.FONT_HERSHEY_PLAIN, 3, (0, 0, 0), 5)
-        img = cv2.putText(img, '%d%%' % (熟度*100), (cx, cy), cv2.FONT_HERSHEY_PLAIN, 3, (255, 128, 128), 5)
+        cv0.putText(img, '%d%%' % (熟度*100), (cx+1, cy+1), cv2.FONT_HERSHEY_PLAIN, 3, (0, 0, 0), 4)
+        cv0.putText(img, '%d%%' % (熟度*100), (cx, cy), cv2.FONT_HERSHEY_PLAIN, 3, (255, 128, 128), 4)
 
     cv0.imshow('125', img)
     cv0.waitKey(1)
